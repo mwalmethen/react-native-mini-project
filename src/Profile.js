@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View, Button, Image } from "react-native";
-
+import { useNavigation } from "@react-navigation/native";
 const Profile = () => {
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <Image
@@ -15,6 +16,15 @@ const Profile = () => {
       />
       <Text style={styles.name}>Mohammed Almethen</Text>
       <Text style={styles.details}>Contact Details: </Text>
+
+      <View style={styles.button}>
+        <Button
+          title="Edit Profile"
+          onPress={() => {
+            navigation.navigate("EditProfile", {});
+          }}
+        />
+      </View>
     </View>
   );
 };
@@ -39,7 +49,14 @@ const styles = StyleSheet.create({
     color: "gray",
     position: "absolute",
     right: 64,
-    bottom: 640,
+    bottom: 650,
+  },
+  button: {
+    position: "absolute",
+    right: 55,
+    bottom: 570,
+    width: 130,
+    height: 50,
   },
 });
 

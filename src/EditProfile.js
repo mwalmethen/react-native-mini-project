@@ -1,38 +1,41 @@
 import { StyleSheet, Text, TextInput, View, Button } from "react-native";
 import React, { useState } from "react";
 
-const CreateItem = () => {
+const EditProfile = () => {
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
-  const [description, setDescription] = useState("");
-
+  const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState("");
   return (
     <View style={styles.container}>
-      <Text>Name: </Text>
+      <Text>First Name: </Text>
       <TextInput
         style={styles.inputField}
         value={name}
         onChangeText={(text) => setName(text)} // Handles text change
-        placeholder="Enter item name"
       />
-      <Text>Price: </Text>
+      <Text>Last Name: </Text>
       <TextInput
         style={styles.inputField}
         value={price}
         onChangeText={(text) => setPrice(text)} // Handles text change
-        placeholder="Enter item price"
       />
-      <Text>Description: </Text>
+      <Text>Phone Number: </Text>
       <TextInput
         style={styles.inputField}
-        value={description}
-        onChangeText={(text) => setDescription(text)} // Handles text change
-        placeholder="Enter item description"
+        value={phone}
+        onChangeText={(text) => setPhone(text)} // Handles text change
+      />
+      <Text>Email: </Text>
+      <TextInput
+        style={styles.inputField}
+        value={email}
+        onChangeText={(text) => setEmail(text)} // Handles text change
       />
       <View style={styles.buttonContainer}>
         <Button
           title="Create Item"
-          onPress={() => console.log({ name, price, description })}
+          onPress={() => console.log({ name, price, phone, email })}
         />
       </View>
     </View>
@@ -56,4 +59,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default CreateItem;
+export default EditProfile;
