@@ -22,9 +22,18 @@ const ProductItem = ({ item, handleItemPressed }) => {
           }}
         />
       </View>
-      <Button title="See Item Details" onPress={handleItemPressed} />
+      <View style={styles.buttonContainer}>
+        <Button title="See Product Details" onPress={handleItemPressed} />
+      </View>
     </View>
   );
 };
+const styles = StyleSheet.create({
+  buttonContainer: {
+    width: 150,
+    marginLeft: 122,
+    marginBottom: 50,
+  },
+});
 
 export default ProductItem;
