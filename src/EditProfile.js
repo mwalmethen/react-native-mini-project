@@ -34,7 +34,7 @@ const EditProfile = () => {
       />
       <View style={styles.buttonContainer}>
         <Button
-          title="Create Item"
+          title="Edit Profile"
           onPress={() => console.log({ name, price, phone, email })}
         />
       </View>
